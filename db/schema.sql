@@ -1,3 +1,3 @@
-DROP DATABASE IF EXISTS museum_db;
+DROP DATABASE IF EXISTS the_hype_db;
 
-CREATE DATABASE museum_db;
+CREATE DATABASE the_hype_db;
