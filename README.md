@@ -3,6 +3,9 @@
 ### Description:
 Add description...
 
+### To install locally 
+- Create .env file
+
 ### Links
 
 * 🌎 [Heroku Page](https://immense-springs-30161.herokuapp.com/)
@@ -45,3 +48,4 @@ https://www.npmjs.com/package/bcrypt
 https://www.npmjs.com/package/express-session
 
 https://www.npmjs.com/package/connect-session-sequelize
+
