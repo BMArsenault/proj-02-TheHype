@@ -1,6 +1,6 @@
-const { Vote } = require('../models');
+const { Ratings } = require('../models');
 
-const votedata = [{
+const ratingsdata = [{
         user_id: 9,
         post_id: 19
     },
@@ -190,6 +190,6 @@ const votedata = [{
     }
 ];
 
-const seedVotes = () => Vote.bulkCreate(votedata);
+const seedRatings = () => Ratings.bulkCreate(ratingsdata);
 
-module.exports = seedVotes;
+module.exports = seedRatings;
