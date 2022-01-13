@@ -3,6 +3,9 @@
 ### Description:
 Add description...
 
+### To install locally 
+- Create .env file
+
 ### Links
 
 * 🌎 [Heroku Page](#)
@@ -45,3 +48,6 @@ https://www.npmjs.com/package/bcrypt
 https://www.npmjs.com/package/express-session
 
 https://www.npmjs.com/package/connect-session-sequelize
+
+
+
