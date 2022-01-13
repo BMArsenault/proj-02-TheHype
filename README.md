@@ -3,6 +3,9 @@
 ### Description:
 Add description...
 
+### To install locally 
+- Create .env file
+
 ### Links
 
 * 🌎 [Heroku Page](https://immense-springs-30161.herokuapp.com/)
