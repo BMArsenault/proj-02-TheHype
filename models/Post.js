@@ -38,14 +38,14 @@ Post.init({
         primaryKey: true,
         autoIncrement: true
     },
-    image: {
-        type: DataTypes.BLOB,
-        allowNull: true,
-    },
-    title: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
+    // image: {
+    //     type: DataTypes.BLOB,
+    //     allowNull: true,
+    // },
+    // title: {
+    //     type: DataTypes.STRING,
+    //     allowNull: false
+    // },
     post_url: {
         type: DataTypes.STRING,
         allowNull: true,
@@ -60,10 +60,10 @@ Post.init({
             key: 'id'
         }
     },
-    description: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
+    // description: {
+    //     type: DataTypes.STRING,
+    //     allowNull: false,
+    // },
 }, {
     sequelize,
     freezeTableName: true,
