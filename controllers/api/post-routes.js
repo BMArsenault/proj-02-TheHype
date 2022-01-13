@@ -5,6 +5,7 @@ const { Post, User, Comment, Vote } = require('../../models');
 // get all users
 router.get('/', (req, res) => {
   console.log('======================');
+  if (req.session) {
   Post.findAll({
     attributes: [
       'id',
@@ -33,11 +34,13 @@ router.get('/', (req, res) => {
       console.log(err);
       res.status(500).json(err);
     });
+  }  
 });
 
 
 
 router.get('/:id', (req, res) => {
+  if (req.session) {
     Post.findOne({
       where: {
         id: req.params.id
@@ -75,10 +78,12 @@ router.get('/:id', (req, res) => {
         console.log(err);
         res.status(500).json(err);
     });
+  }  
 });
 
 router.post('/', (req, res) => {
     // expects {title: 'Taskmaster goes public!', post_url: 'https://taskmaster.com/press', user_id: 1}
+  if (req.session) {
     Post.create({
       title: req.body.title,
       post_url: req.body.post_url,
@@ -89,20 +94,24 @@ router.post('/', (req, res) => {
         console.log(err);
         res.status(500).json(err);
     });
+  }
 });
 
 // PUT /api/posts/upvote
 router.put('/upvote', (req, res) => {
   // custom static method created in models/Post.js
+  if (req.session) {
   Post.upvote(req.body, { Vote })
     .then(updatedPostData => res.json(updatedPostData))
     .catch(err => {
       console.log(err);
       res.status(400).json(err);
     });
+  }  
 });
 
 router.put('/:id', (req, res) => {
+  if (req.session) {
     Post.update(
       {
         title: req.body.title
@@ -124,9 +133,11 @@ router.put('/:id', (req, res) => {
         console.log(err);
         res.status(500).json(err);
     });
+  }
 });
 
 router.delete('/:id', (req, res) => {
+  if (req.session) {
     Post.destroy({
       where: {
         id: req.params.id
@@ -143,6 +154,7 @@ router.delete('/:id', (req, res) => {
         console.log(err);
         res.status(500).json(err);
     });
+  }
 });
 
 module.exports = router;
