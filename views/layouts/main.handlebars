@@ -28,17 +28,17 @@
 
       <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
-      <a class="navbar-item" href="/">Home</a>
-      {{#if loggedIn}}
-        <a class="navbar-item" href="/dashboard">Dashboard</a>
-      {{else}}
-        <a class="navbar-item" href="/login">Dashboard</a>
-      {{/if}}
-      {{#if loggedIn}}
-        <button id="logout" class="btn-no-style">Logout</button>
-      {{else}}
-        <a class="navbar-item" href="/login">Login</a>
-      {{/if}}
+          <a class="navbar-item" href="/">Home</a>
+          {{#if loggedIn}}
+          <a class="navbar-item" href="/dashboard">Dashboard</a>
+          {{else}}
+          <a class="navbar-item" href="/login">Dashboard</a>
+          {{/if}}
+          {{#if loggedIn}}
+          <button id="logout" class="btn-no-style">Logout</button>
+          {{else}}
+          <a class="navbar-item" href="/login">Login</a>
+          {{/if}}
 
       <div class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link">More</a>
