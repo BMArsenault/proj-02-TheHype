@@ -15,20 +15,20 @@
   <body>
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
-        <a class="navbar-item" href="https://bulma.io">
-            <img src="../images/THE HYPE.png" width="112" height="40">
+        <a class="navbar-item" href="/">
+            <H1 style="color: #1b1b1b; font-weight:bolder; font-size:large;">THE HYPE</H1>
         </a>
 
-        {{!-- <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
-        </a> --}}
+        </a>
       </div>
 
       <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
-          <a class="navbar-item" href="/">Home</a>
+          {{!-- <a class="navbar-item" href="/">Home</a> --}}
           {{#if loggedIn}}
           <a class="navbar-item" href="/dashboard">Dashboard</a>
           {{else}}
@@ -60,9 +60,8 @@
         {{/if}}     
       </div>
     </header> --}}
-
-    <div class="wrapper"></div>
-
+    <br>
+    <br>
     <section class="container">
       <div class="tile is-ancestor">
         <div class="tile is-7 is-parent">
@@ -94,9 +93,9 @@
       <br/>
 
       <section class="container">
-        <div class="tile is-parent">
+        <div style="padding: 0; display:flex; justify-content: center;" class="tile is-parent">
             <article class="tile is-child notification is-danger">
-                <p class="title has-text-centered">The Hype will stays up to date with today's newest trends</p>
+                <p class="title has-text-centered">The Hype will stay up to date with today's newest trends</p>
                 <p class="subtitle has-text-centered">See articles below for the hottest categories</p>
             </article>
         </div>
@@ -104,8 +103,8 @@
 
     <br>
     <br>
-
-    <section class="container">
+    
+    <section class="container">  
       <div class="tile is-ancestor is-justify-content-center">
         <div class="tile is-vertical is-parent is-4">
           <div class="tile is-child box">
@@ -143,10 +142,12 @@
     <br/>
 
     <footer class="has-text-centered">
-      The Hype 🔥 2022
+      &copy The Hype 🔥 2022
     </footer>
+    <br>
   
   </body>
+  <script src="/javascript/hamburger-nav.js"></script>
   {{#if loggedIn}}
     <script src="/javascript/logout.js"></script>
   {{/if}}
