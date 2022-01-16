@@ -1,20 +1,37 @@
-<section>
-  <h2>Create New Post</h2>
-
-  <form class="new-post-form">
-    <div class="field">
-      <label class="label" for="post-title">Title</label>
-      <input class="input" type="text" id="post-title" name="post-title" />
+<br>
+<br>
+<br>
+<section class="vh-75">
+  <div class="container py-5 h-75">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card bg-dark text-white" style="border-radius: 1rem;">
+          <div class="card-body p-5 text-center">
+            <div class="mb-md-5 mt-md-4 pb-5">
+              <h2 class="title">Create New Post</h2>
+              <div class="field">
+                <label class="label" for="post-title">Title</label>
+                <div class="control">
+                  <input class="input" type="text" id="post-title" name="post-title" />
+                </div>
+              </div>
+              <div class="field">
+                <label class="label" for="post-description">Description</label>
+                <div class="control">
+                  <textarea id="post-description" class="textarea" placeholder="Textarea"></textarea>
+                </div>
+              </div>
+              <div class="field is-grouped">
+                <div class="control">
+                  <button class="button is-link" type="submit" class="btn">Create</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    
-    <div class="field">
-      <label class="label" for="post-description">Description</label>
-        <div class="control">
-          <textarea id="post-description" class="textarea" placeholder="Textarea"></textarea>
-         </div>
-    </div>
-    <button class="button is-fullwidth is-dark is-large" type="submit" class="btn">Create</button>
-  </form>
+  </div>
 </section>
 
 <br>
@@ -34,4 +51,8 @@
   </ul>
 </section>
 {{/if}}
+
+<footer id="footer" class="has-text-centered">
+      &copy The Hype 🔥 2022
+</footer>
 <script src="/javascript/add-post.js"></script>
