@@ -1,10 +1,12 @@
 # The HYPE
 
 ### Description:
-Add description...
+The Hype is the newest website for today's trends.  The Hype allows people to search todays hottest trends with up to date "trends" voted on by the people.  Login and you can post, comment and like other posts in The Hype community
 
 ### To install locally 
-- Create .env file
+- Create .env file using the .env.EXAMPLE
+- Use "npm i" to install dependencies
+
 
 ### Links
 
