@@ -7,7 +7,7 @@
       <div class="col-12 col-md-8 col-lg-6 col-xl-5">
         <div class="card bg-dark text-white" style="border-radius: 1rem;">
           <div class="card-body p-5 text-center">
-            <div class="mb-md-5 mt-md-4 pb-5">
+            <div class=" mb-md-5 mt-md-4 pb-5">
               <h2 class="title">Create New Post</h2>
               <div class="field">
                 <label class="label" for="post-title">Title</label>
@@ -21,9 +21,35 @@
                   <textarea id="post-description" class="textarea" placeholder="Textarea"></textarea>
                 </div>
               </div>
+              <form method="POST" action="api/image/profile-upload-single" enctype="multipart/form-data">
+                <div>
+                    <label>Upload profile picture</label>
+                    <input type="file" name="profile-file" required/>
+                </div>
+                <div>
+                    <input type="submit" value="Upload" />
+                </div>
+            </form>
+              {{!-- <div id="image-name" class="file has-name">
+                <label class="file-label">
+                  <input class="file-input" type="file" name="resume">
+                  <span class="file-cta">
+                    <span class="file-icon">
+                      <i class="fas fa-upload"></i>
+                    </span>
+                    <span class="file-label">
+                      Choose a file…
+                    </span>
+                  </span>
+                  <span class="file-name">
+                    No file uploaded
+                  </span>
+                </label>
+              </div> --}}
+              <br>
               <div class="field is-grouped">
                 <div class="control">
-                  <button class="button is-link" type="submit" class="btn">Create</button>
+                  <button class="button is-link" type="submit" onclick="newFormHandler()">Create</button>
                 </div>
               </div>
             </div>
@@ -37,22 +63,35 @@
 <br>
 
 {{#if posts.length}}
-<section>
-  <h2>Your Posts</h2>
-  <ul>
-    {{#each posts as |post|}}
-    <li>
-      {{> post-info post}}
-      <div class="button" style="margin-bottom: 1rem; font-weight: bold;">
-        <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
-      </div>      
-    </li>
-    {{/each}}
-  </ul>
+<section class="vh-75">
+  <div class="container py-5 h-75">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card bg-dark text-white" style="border-radius: 1rem;">
+            <div class="card-body p-5 text-center">
+              <div class=" mb-md-5 mt-md-4 pb-5">
+                <h2 class="title">Your Posts</h2>
+                <ul>
+                  {{#each posts as |post|}}
+                  <li>
+                    {{> post-info post}}
+                    <div class="button" style="margin-bottom: 1rem; font-weight: bold;">
+                      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+                    </div>      
+                  </li>
+                  {{/each}}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
 </section>
 {{/if}}
 
 <footer id="footer" class="has-text-centered">
       &copy The Hype 🔥 2022
 </footer>
+<script src="/javascript/image-file-name.js"></script>
 <script src="/javascript/add-post.js"></script>

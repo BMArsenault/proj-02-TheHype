@@ -1,5 +1,4 @@
-async function newFormHandler(event) {
-    event.preventDefault();
+async function newFormHandler() {
 
     const title = document.querySelector('input[name="post-title"]').value.trim();
     const description = document.getElementById('post-description').value.trim();
@@ -22,5 +21,3 @@ async function newFormHandler(event) {
         alert(response.statusText);
     }
 }
-
-document.querySelector('.new-post-form').addEventListener('submit', newFormHandler);
