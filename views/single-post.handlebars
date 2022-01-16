@@ -1,21 +1,33 @@
 {{> post-info post}}
 
-{{#if loggedIn}}
-<form class="comment-form">
-  <div>
-    <textarea name="comment-body"></textarea>
-  </div>
-
-  <div>
-    <button type="submit">add comment</button>
-    <button type="button" class="upvote-btn">upvote</button>
-  </div>
-</form>
-{{/if}}
-
 {{> comments post.comments}}
 
+
 {{#if loggedIn}}
-<script src="/js/comment.js"></script>
-<script src="/js/upvote.js"></script>
+
+<article class="post">
+  <div class="title">
+    <br>
+      </div>
+      <div style="margin: 1rem;">
+<form class="comment-form">
+    <div class="field">
+      <label class="label" for="post-description">New Comment</label>
+        <div class="control">
+          <textarea name="comment-body" class="textarea" placeholder="Textarea"></textarea>
+         </div>
+    </div>
+
+  <div>
+    <button class="button is-fullwidth is-dark is-large" type="submit">submit</button>
+  </div>
+</form>
+      </div>
+</article>
+
+{{/if}}
+
+
+{{#if loggedIn}}
+<script src="/javascript/comment.js"></script>
 {{/if}}

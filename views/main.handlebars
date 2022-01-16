@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Hype</title>
+    <title>The Tech Blog</title>
     <link
       rel="icon"
       href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐔</text></svg>"
@@ -20,7 +20,7 @@
     <nav>
       <a href="/">Home</a>
       {{#if loggedIn}}
-        <a href="/dashboard">dashboard</a>
+        <a href="/dashboard">Dashboard</a>
       {{else}}
         <a href="/login">Dashboard</a>
       {{/if}}
@@ -32,8 +32,11 @@
     </nav>
     <header>
       <div class="main-title">
-        <h1>The Hype</h1>
-        <p>For Today's hottest trends</p>
+        {{#if dashBoard}}
+        <h1>Dashboard</h1>
+        {{else}}
+        <h1>The Tech Blog</h1>
+        {{/if}}     
       </div>
     </header>
     <div class="wrapper"></div>
