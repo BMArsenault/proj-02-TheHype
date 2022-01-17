@@ -21,13 +21,24 @@
                   <textarea id="post-description" class="textarea" placeholder="Textarea"></textarea>
                 </div>
               </div>
+              <label class="label" for="post-category">Title</label>
+              <div class="select">                
+                <select>
+                  <option>Select Category</option>
+                  <option>With options</option>
+                </select>
+              </div>
+              <br>
+              <br>
+              <label class="label" for="post-image">Image</label>
               <form method="POST" action="api/image/profile-upload-single" enctype="multipart/form-data">
                 <div>
                     <label>Upload profile picture</label>
                     <input type="file" name="profile-file" required/>
                 </div>
+                <br>
                 <div>
-                    <input type="submit" value="Upload" />
+                    <input class="button" type="submit" value="Upload" />
                 </div>
             </form>
               {{!-- <div id="image-name" class="file has-name">

@@ -11,6 +11,8 @@ class Post extends Model {
                 'id',
                 'title',
                 'description',
+                'category_id',
+                'image_name',
                 'created_at'
             ],
             include: [{
@@ -40,6 +42,17 @@ Post.init({
     description: {
         type: DataTypes.STRING,
         allowNull: false
+    },
+    category_id: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: 'category',
+            key: 'id'
+        }
+    },
+    image_name: {
+        type: DataTypes.STRING,
+        allowNull: true
     },
     user_id: {
         type: DataTypes.INTEGER,

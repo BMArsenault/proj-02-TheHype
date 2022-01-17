@@ -8,7 +8,9 @@ async function newFormHandler() {
         method: 'POST',
         body: JSON.stringify({
             title,
-            description
+            description,
+            category_id,
+            image_name
         }),
         headers: {
             'Content-Type': 'application/json'
