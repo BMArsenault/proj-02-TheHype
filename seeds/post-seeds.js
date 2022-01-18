@@ -4,14 +4,14 @@ const postdata = [
     {
         title: 'Underwater Volcano Erupts',
         description: 'A volcano erupts underwater near New Zealand causing panic of a possible Tsunami',
-        category_id: 1,
+        category_id: 2,
         image_name: 'Screenshot 2022-01-13 193423.png',
         user_id: 2,
     },
     {
         title: 'BMW Color Changing Paint',
         description: 'BMW releases a car with paint color that changes.  This may be the new trend in car purchasing but some people are saying it may not go over well with the Motor Vehicles Department.',
-        category_id: 2,
+        category_id: 5,
         image_name: 'Screenshot 2022-01-13 193423.png',
         user_id: 3,
     },
@@ -26,7 +26,7 @@ const postdata = [
     {
         title: 'Tom Brady Does It Again',
         description: 'Tom Brady continues to amaze in his 22nd season.  He led the league in TD passes and yardage at the age of 44.',
-        category_id: 4,
+        category_id: 1,
         image_name: 'Screenshot 2022-01-13 193423.png',
         user_id: 3,
     },

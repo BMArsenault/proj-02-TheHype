@@ -1,103 +1,105 @@
-   <br>
-    <br>
-    <section class="container has-text-centered-mobile">
-      <div class="tile is-ancestor">
-        <div class="tile is-7 is-parent">
-          <div class="tile is-child box">
-            <p class="title first-title">HOTTEST ARTICLE</p>
-              <a href="/post/{{posts.[0].id}}">
-              {{!-- <img src="/uploads/{{posts.[0].image}}" alt="{{posts.[0].title}}"> --}}
-              <img src="../images/underwatervolcano.jpg" alt="hottest trend" class="img-main"></a>
-                <h1 class="is-size-2 has-text-weight-bold has-text-centered-mobile">{{{ posts.[0].title }}}</h1>
-                <br/>
-                <p>{{{ posts.[0].description }}}</p>
-              </div>
-          </div>
-
-          <div class="tile is-vertical is-parent">
-            <div class="tile is-child box">
-              <p class="title second-title">Up And Coming</p>
-              <a href="/post/{{posts.[1].id}}">
-              {{!-- <img src="/uploads/{{posts.[2].image}}" alt="{{posts.[2].title}}"> --}}
-              <img src="../images/colorchangingpaint.jpg" alt="hottest trend" class="img-main"></a>
-                <h1 class="is-size-4 has-text-weight-bold has-text-centered-mobile">{{{ posts.[1].title }}}</h1>
-                <br/>
-                <p>{{{ posts.[1].description }}}</p>
-            </div>
-            <div class="tile is-child box">
-              <p class="title third-title">Up And Coming</p>
-              <a href="/post/{{posts.[2].id}}">
-              {{!-- <img src="/uploads/{{posts.[2].image}}" alt="{{posts.[2].title}}"> --}}
-              <img src="../images/nedflandersshoes.jpg" alt="hottest trend" class="img-main"></a>
-                <h1 class="is-size-4 has-text-weight-bold has-text-centered-mobile">{{{ posts.[2].title }}}</h1>
-                <br/>
-                <p>{{{ posts.[2].description }}}</p>
-            </div>
-            <div class="tile is-child box">
-              <p class="title fourth-title">Up And Coming</p>
-              <a href="/post/{{posts.[3].id}}">
-              {{!-- <img src="/uploads/{{posts.[3].image}}" alt="{{posts.[3].title}}"> --}}
-              <img src="../images/tombrady.jpg" alt="hottest trend" class="img-main"></a>
-                <h1 class="is-size-4 has-text-weight-bold has-text-centered-mobile">{{{ posts.[3].title }}}</h1>
-                <br/>
-                <p>{{{ posts.[3].description }}}</p>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      <br/>
-      <br/>
-
-      <section class="container">
-        <div style="padding: 0; display:flex; justify-content: center;" class="tile is-parent">
-            <article class="tile is-child notification is-danger">
-                <p class="title has-text-centered has-text-centered-mobile">The Hype will stay up to date with today's newest trends</p>
-                <p class="subtitle has-text-centered has-text-centered-mobile">See articles below for the hottest categories</p>
-            </article>
-        </div>
-    </section>
-
-    <br>
-    <br>
-    
-    <section class="container has-text-centered has-text-centered-mobile">  
-      <div class="tile is-ancestor is-justify-content-center">
-        <div class="tile is-vertical is-parent is-4">
-          <div class="tile is-child box">
-            <p class="title has-text-centered-mobile">Sneakers</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
-          </div>
-          <div class="tile is-child box">
-            <p class="title has-text-centered-mobile">Streetwear</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
-          </div>
-          <div class="tile is-child box">
-            <p class="title has-text-centered-mobile">Cars</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
-          </div>
-        </div>
-
-        <div class="tile is-vertical is-parent is-4">
-          <div class="tile is-child box">
-            <p class="title has-text-centered-mobile">World</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
-          </div>
-          <div class="tile is-child box">
-            <p class="title has-text-centered-mobile">Food & Drink</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
-          </div>
-          <div class="tile is-child box">
-            <p class="title has-text-center">Crypto</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
-          </div>
-        </div>
+<br>
+<br>
+<section class="container has-text-centered-mobile">
+  <div class="tile is-ancestor">
+    <div class="tile is-7 is-parent">
+      <div class="tile is-child box">
+        <a style="color:#4a4a4a" href="/post/{{posts.[0].id}}">
+          <p class="title first-title">HOTTEST ARTICLE</p>
+          <hr>
+                {{!-- <img src="/uploads/{{posts.[0].image}}" alt="{{posts.[0].title}}"> --}}
+            <img src="../images/underwatervolcano.jpg" alt="hottest trend" class="img-main">
+            <h1 class="is-size-2 has-text-weight-bold has-text-centered-mobile">{{{ posts.[0].title }}}</h1>
+            <br/>
+          <p>{{{ posts.[0].description }}}</p>
+        </a>
       </div>
-    </section>
-    
-    <br/>
-    <br/>
+    </div>
 
-    <footer style="padding-bottom: 1rem;" class="has-text-centered">
-      &copy The Hype 🔥 2022
-    </footer>
+    <div class="tile is-vertical is-parent">
+      <div class="tile is-child box">
+        <a style="color:#4a4a4a" href="/post/{{posts.[1].id}}">
+          <p class="title second-title">Up And Coming</p>
+          <hr>
+          <h1 class="is-size-4 has-text-weight-bold has-text-centered-mobile">{{{ posts.[1].title }}}</h1>
+          <br/>
+          <p>{{{ posts.[1].description }}}</p>
+        </a>
+      </div>
+      <div class="tile is-child box">
+        <a style="color:#4a4a4a" href="/post/{{posts.[2].id}}">
+          <p class="title third-title">Up And Coming</p>
+          <hr>
+          <h1 class="is-size-4 has-text-weight-bold has-text-centered-mobile">{{{ posts.[2].title }}}</h1>
+          <br/>
+          <p>{{{ posts.[2].description }}}</p>
+        </a>
+      </div>
+      <div class="tile is-child box"> 
+        <a style="color:#4a4a4a" href="/post/{{posts.[3].id}}">
+          <p class="title fourth-title">Up And Coming</p>
+          <hr>
+          <h1 class="is-size-4 has-text-weight-bold has-text-centered-mobile">{{{ posts.[3].title }}}</h1>
+          <br/>
+          <p>{{{ posts.[3].description }}}</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+      
+<br/>
+<br/>
+
+<section class="container">
+  <div style="padding: 0; display:flex; justify-content: center;" class="tile is-parent">
+    <article class="tile is-child notification is-danger">
+      <p class="title has-text-centered has-text-centered-mobile">The Hype will stay up to date with today's popular stories</p>
+      <p class="subtitle has-text-centered has-text-centered-mobile">See categories below for specific trends</p>
+    </article>
+  </div>
+</section>
+
+<br>
+<br>
+    
+<section class="container has-text-centered has-text-centered-mobile">  
+  <div class="tile is-ancestor is-justify-content-center">
+    <div class="tile is-vertical is-parent is-4">
+      <div class="tile is-child box">
+        <p class="title has-text-centered-mobile">Sports</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
+      </div>
+      <div class="tile is-child box">
+        <p class="title has-text-centered-mobile">Streetwear</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
+      </div>
+      <div class="tile is-child box">
+        <p class="title has-text-centered-mobile">Cars</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
+      </div>
+    </div>
+
+    <div class="tile is-vertical is-parent is-4">
+      <div class="tile is-child box">
+        <p class="title has-text-centered-mobile">World</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
+      </div>
+      <div class="tile is-child box">
+        <p class="title has-text-centered-mobile">Food & Drink</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
+      </div>
+      <div class="tile is-child box">
+        <p class="title has-text-center">Crypto</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
+      </div>
+    </div>
+  </div>
+</section>
+    
+<br/>
+<br/>
+
+<footer style="padding-bottom: 1rem;" class="has-text-centered">
+  &copy The Hype 🔥 2022
+</footer>

@@ -1,16 +1,21 @@
 <article class="post">
   <div class="title">
-    <a href="/post/{{id}}" class="edit-link"><h3>{{title}}</h3></a>
-    <p style="display: flex;">
-      posted by
+    <p style="color:#4a4a4a" href="/post/{{id}}" class="edit-link"><h3>{{title}}</h3></p>
+    <br/>
+  <div class="image">
+    {{!-- <img src="/uploads/{{posts.[0].image}}" alt="{{posts.[0].title}}" style="height:500px;width:500px;"> --}}
+    <img src="../images/underwatervolcano.jpg" alt="hottest trend" style="height:400px;width:400px;" class="img-main"></a>
+  </div>
+    <p style="display: flex; font-size:large;">
+      Posted by
       {{user.username}}
       on
       {{format_date created_at}}</p>
   </div>
   <div class="description">
-    <p
-      style="font-size: large; font: arial; font-weight: 500; margin: 1rem;"
-    >{{description}}</p>
+    <p style="font-size: large; font: arial; font-weight: 500; margin: 1rem;">
+    {{description}}
+    </p>
   </div>
   <div class="meta">
     <a href="/post/{{id}}">{{comments.length}}

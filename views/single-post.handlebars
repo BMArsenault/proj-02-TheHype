@@ -1,33 +1,54 @@
-{{> post-info post}}
+<br/>
 
-{{> comments post.comments}}
+<br/>
+
+
 
 
 {{#if loggedIn}}
-
-<article class="post">
-  <div class="title">
-    <br>
+<article class="post vh-75">
+  <form class="comment-form">
+    <div class="container py-5 h-75">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card bg-dark text-white" style="border-radius: 1rem;">
+            <div class="card-body p-5 text-center">
+              <div class="mb-md-5 mt-md-4 pb-5">
+                {{> post-info post}}
+                <br>
+                <hr>
+                {{> comments post.comments}}
+                <br>
+                <hr>
+                <div class="field">
+                  <label class="label">New Comment</label>
+                  <div class="control">
+                    <textarea name="comment-body" class="textarea" placeholder="Textarea"></textarea>
+                  </div>
+                </div>
+                <div class="field is-grouped">
+                  <div class="control">
+                    <button class="button is-link" type="submit">Submit</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div style="margin: 1rem;">
-<form class="comment-form">
-    <div class="field">
-      <label class="label" for="post-description">New Comment</label>
-        <div class="control">
-          <textarea name="comment-body" class="textarea" placeholder="Textarea"></textarea>
-         </div>
     </div>
-
-  <div>
-    <button class="button is-fullwidth is-dark is-large" type="submit">submit</button>
-  </div>
-</form>
-      </div>
+    </form>
 </article>
 
+<footer id="footer" class="has-text-centered">
+      &copy The Hype 🔥 2022
+</footer>
+
 {{/if}}
+
 
 
 {{#if loggedIn}}
 <script src="/javascript/comment.js"></script>
 {{/if}}
+
