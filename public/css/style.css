@@ -36,7 +36,14 @@ input[type=file]::file-selector-button {
     background: white;
 }
 
-/* contact.handlebars page */
+/* contact.handlebars pages */
+.contact {
+    display: flex;
+    justify-content: center;
+    font-size: xx-large;
+    font-weight: bolder;
+}
+
 .email {
     font-size: 30px;
 }
