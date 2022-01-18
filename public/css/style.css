@@ -42,8 +42,10 @@ input[type=file]::file-selector-button {
     justify-content: center;
     font-size: xx-large;
     font-weight: bolder;
+    margin-bottom: 30px;
 }
 
-.email {
-    font-size: 30px;
-}
+
+/* .icon {
+    font-size: 25px;
+} */
