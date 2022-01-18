@@ -35,3 +35,8 @@ input[type=file]::file-selector-button {
     height: 40px;
     background: white;
 }
+
+/* contact.handlebars page */
+.email {
+    font-size: 30px;
+}
