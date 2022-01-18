@@ -1,7 +1,8 @@
 const sequelize = require('../config/connection');
 const { User, Post } = require('../models');
 
-const userdata = [{
+const userdata = [
+    {
         username: 'r00ster_96',
         email: 'r00ster@gmail.com',
         password: 'password123'
