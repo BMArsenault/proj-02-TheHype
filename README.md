@@ -5,7 +5,9 @@ The Hype is the newest website for today's trends.  The Hype allows people to se
 
 ### To install locally 
 - Create .env file using the .env.EXAMPLE
+- Create database 
 - Use "npm i" to install dependencies
+- npm run seed 
 
 
 ### Links
@@ -50,3 +52,4 @@ https://www.npmjs.com/package/bcrypt
 https://www.npmjs.com/package/express-session
 
 https://www.npmjs.com/package/connect-session-sequelize
+

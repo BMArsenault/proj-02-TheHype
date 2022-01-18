@@ -5,7 +5,7 @@ const categorydata = [{
 }, {
     category_name: 'World',
 }, {
-    category_name: 'Streatwear',
+    category_name: 'Streetwear',
 }, {
     category_name: 'Food & Drink',
 }, {
