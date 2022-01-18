@@ -1,4 +1,6 @@
 <article class="post">
+  {{log image_name}}
+  <img src="/uploads/{{image_name}}" alt="image-post">
   <div class="title">
     <a href="/post/{{id}}" class="edit-link"><h3>{{title}}</h3></a>
     <p style="display: flex;">
@@ -11,6 +13,11 @@
     <p
       style="font-size: large; font: arial; font-weight: 500; margin: 1rem;"
     >{{description}}</p>
+  </div>
+  <div class="categories">
+    <p
+      style="font-size: large; font: arial; font-weight: 500; margin: 1rem;"
+    >{{category.category_name}}</p>
   </div>
   <div class="meta">
     <a href="/post/{{id}}">{{comments.length}}

@@ -2,6 +2,17 @@ const router = require('express').Router();
 const sequelize = require('../../config/connection');
 const { Post, User, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
+const multer = require('multer');
+const storage = multer.diskStorage({
+    destination: function(req, file, cb) {
+        cb(null, './public/uploads')
+    },
+    filename: function(req, file, cb) {
+        cb(null, file.originalname)
+    }
+})
+const upload = multer({ storage: storage })
+
 
 // get all users
 router.get('/', (req, res) => {
@@ -11,6 +22,7 @@ router.get('/', (req, res) => {
                 'id',
                 'title',
                 'description',
+                'image_name',
                 'created_at'
             ],
             include: [{
@@ -43,6 +55,7 @@ router.get('/:id', (req, res) => {
                 'id',
                 'title',
                 'description',
+                'image_name',
                 'created_at'
             ],
             include: [{
@@ -73,21 +86,26 @@ router.get('/:id', (req, res) => {
         });
 });
 
-router.post('/', withAuth, (req, res) => {
+router.post('/', withAuth, upload.single('image_name'), (req, res) => {
     // expects {title: 'Taskmaster goes public!', post_url: 'https://taskmaster.com/press', user_id: 1}
+    console.log("READING PATH: ", req.file.path.replace('public\\uploads\\', ''));
+    console.log("title:", req.body.title);
+    console.log(req.body);
     Post.create({
             title: req.body.title,
             description: req.body.description,
+            category_id: req.body.categories,
+            image_name: req.file.path.replace('public\\uploads\\', ''),
             user_id: req.session.user_id
         })
-        .then(dbPostData => res.json(dbPostData))
+        .then(res.redirect('/dashboard/'))
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
         });
 });
 
-router.put('/blog-post', withAuth, (req, res) => {
+router.put('/blog-post', withAuth, upload.single('image_name'), (req, res) => {
     // custom static method created in models/Post.js
     Post.postBlog({...req.body, user_id: req.session.user_id }, { Comment, User })
         .catch(err => {
@@ -100,6 +118,7 @@ router.put('/:id', withAuth, (req, res) => {
     Post.update({
             title: req.body.title,
             description: req.body.description,
+            image_name: req.file.path,
             user_id: req.session.user_id
         }, {
             where: {

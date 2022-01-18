@@ -9,60 +9,46 @@
           <div class="card-body p-5 text-center">
             <div class=" mb-md-5 mt-md-4 pb-5">
               <h2 class="title">Create New Post</h2>
+              <form action="/api/posts" method="POST" enctype="multipart/form-data">
               <div class="field">
                 <label class="label" for="post-title">Title</label>
                 <div class="control">
-                  <input class="input" type="text" id="post-title" name="post-title" />
+                  <input class="input" type="text" id="post-title" name="title" />
                 </div>
               </div>
               <div class="field">
                 <label class="label" for="post-description">Description</label>
                 <div class="control">
-                  <textarea id="post-description" class="textarea" placeholder="Textarea"></textarea>
+                  <textarea name="description" id="post-description" class="textarea" placeholder="Textarea"></textarea>
                 </div>
               </div>
               <label class="label" for="post-category">Category</label>
-              <div class="select">                
-                <select>
-                  <option>Select Category</option>
-                  <option>With options</option>
+              <div>               
+                <select name="categories" class="categories">
+                  <option disabled>Select Category</option>
+                  <option value="1">Sports</option>
+                  <option value="2">World</option>
+                  <option value="3">Streetwear</option>
+                  <option value="4">Food & Drink</option>
+                  <option value="5">Cars</option>
+                  <option value="6">Crypto</option>
                 </select>
               </div>
               <br>
               <br>
               <label class="label" for="post-image">Image</label>
-              <form method="POST" action="api/image/profile-upload-single" enctype="multipart/form-data">
+              
                 <div>
                     <label>Upload profile picture</label>
-                    <input type="file" name="profile-file" required/>
+                    <input type="file" name="image_name" required/>
                 </div>
                 <br>
-                <div>
-                    <input class="button" type="submit" value="Upload" />
-                </div>
-            </form>
-              {{!-- <div id="image-name" class="file has-name">
-                <label class="file-label">
-                  <input class="file-input" type="file" name="resume">
-                  <span class="file-cta">
-                    <span class="file-icon">
-                      <i class="fas fa-upload"></i>
-                    </span>
-                    <span class="file-label">
-                      Choose a file…
-                    </span>
-                  </span>
-                  <span class="file-name">
-                    No file uploaded
-                  </span>
-                </label>
-              </div> --}}
-              <br>
               <div class="field is-grouped">
                 <div class="control">
-                  <button class="button is-link" type="submit" onclick="newFormHandler()">Create</button>
+                  <button class="button is-link" type="submit">Create</button>
                 </div>
               </div>
+              </form>
             </div>
           </div>
         </div>
@@ -72,7 +58,6 @@
 </section>
 
 <br>
-
 {{#if posts.length}}
 <section class="vh-75">
   <div class="container py-5 h-75">
@@ -100,6 +85,8 @@
   </div>
 </section>
 {{/if}}
+<br>
+<br>
 
 <footer id="footer" class="has-text-centered">
       &copy The Hype 🔥 2022
