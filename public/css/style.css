@@ -37,6 +37,10 @@ input[type=file]::file-selector-button {
 }
 
 /* contact.handlebars page */
+.info {
+    background-image: url("../images/fire-cool.jpeg");
+}
+
 .contact {
     display: flex;
     justify-content: center;
