@@ -38,7 +38,8 @@ input[type=file]::file-selector-button {
 
 /* contact.handlebars page */
 .info {
-    background-image: url("../images/fire-cool.jpeg");
+    background-image: url("../images/fire-fire.jpeg");
+    background-position: center;
 }
 
 .contact {
@@ -59,7 +60,8 @@ input[type=file]::file-selector-button {
 
 /* about.handlebars page */
 .about-us {
-background-image: url("../images/fire-cool.jpeg");
+background-image: url("../images/fire-fire.jpeg");
+background-position: center;
 }
 
 .about {
