@@ -49,6 +49,14 @@ input[type=file]::file-selector-button {
     margin-bottom: 30px;
 }
 
+.phone:hover {
+    color: rgb(255, 255, 255);
+}
+
+.email:hover{
+    color: rgb(255, 255, 255);
+}
+
 /* about.handlebars page */
 .about-us {
 background-image: url("../images/fire-cool.jpeg");
