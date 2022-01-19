@@ -1,84 +1,165 @@
 const router = require('express').Router();
-const { Gallery, Painting } = require('../models');
-// Import the custom middleware
-const withAuth = require('../utils/auth');
+const sequelize = require('../config/connection');
+const { Post, User, Comment, Category } = require('../models');
 
-// GET all galleries for homepage
-router.get('/', async (req, res) => {
-  try {
-    const dbGalleryData = await Gallery.findAll({
-      include: [
-        {
-          model: Painting,
-          attributes: ['filename', 'description'],
-        },
-      ],
-    });
+// get all posts for homepage
+router.get('/', (req, res) => {
+    console.log('======================');
+    Post.findAll({
+            attributes: [
+                'id',
+                'title',
+                'description',
+                'image_name',
+                'created_at'
+            ],
+            include: [{
+                    model: Comment,
+                    attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+                    include: {
+                        model: User,
+                        attributes: ['username']
+                    }
+                },
+                {
+                    model: User,
+                    attributes: ['username']
+                },
+                {
+                    model: Category,
+                    attributes: ['category_name']
+                },
 
-    const galleries = dbGalleryData.map((gallery) =>
-      gallery.get({ plain: true })
-    );
+            ]
+        })
+        .then(dbPostData => {
+            const posts = dbPostData.map(post => post.get({ plain: true }));
+            // console.log(posts);
+            res.render('homepage', {
+                posts,
+                loggedIn: req.session.loggedIn
+            });
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
 
-    res.render('homepage', {
-      galleries,
-      loggedIn: req.session.loggedIn,
-    });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
 });
 
-// GET one gallery
-// Use the custom middleware before allowing the user to access the gallery
-router.get('/gallery/:id', withAuth, async (req, res) => {
-  try {
-    const dbGalleryData = await Gallery.findByPk(req.params.id, {
-      include: [
-        {
-          model: Painting,
-          attributes: [
-            'id',
-            'title',
-            'artist',
-            'exhibition_date',
-            'filename',
-            'description',
-          ],
-        },
-      ],
-    });
+// get single post
+router.get('/post/:id', (req, res) => {
+    Post.findOne({
+            where: {
+                id: req.params.id
+            },
+            attributes: [
+                'id',
+                'title',
+                'description',
+                'image_name',
+                'created_at',
+            ],
+            include: [{
+                    model: Comment,
+                    attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+                    include: {
+                        model: User,
+                        attributes: ['username']
+                    }
+                },
+                {
+                    model: User,
+                    attributes: ['username']
+                },
+                {
+                    model: Category,
+                    attributes: ['category_name']
+                },
+            ]
+        })
+        .then(dbPostData => {
+            if (!dbPostData) {
+                res.status(404).json({ message: 'No post found with this id' });
+                return;
+            }
 
-    const gallery = dbGalleryData.get({ plain: true });
-    res.render('gallery', { gallery, loggedIn: req.session.loggedIn });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
+            const post = dbPostData.get({ plain: true });
 
-// GET one painting
-// Use the custom middleware before allowing the user to access the painting
-router.get('/painting/:id', withAuth, async (req, res) => {
-  try {
-    const dbPaintingData = await Painting.findByPk(req.params.id);
-
-    const painting = dbPaintingData.get({ plain: true });
-
-    res.render('painting', { painting, loggedIn: req.session.loggedIn });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
+            res.render('single-post', {
+                post,
+                loggedIn: req.session.loggedIn
+            });
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
 });
 
 router.get('/login', (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect('/');
-    return;
-  }
-
-  res.render('login');
+    if (req.session.loggedIn) {
+        res.redirect('/');
+        return;
+    }
+    res.render('login');
 });
+
+router.get('/signup', (req, res) => {
+    res.render('signup');
+})
+
+router.get('/trends', (req, res) => {
+    Post.findAll({
+        attributes: [
+            'id',
+            'title',
+            'description',
+            'image_name',
+            'created_at'
+        ],
+        order: [['created_at', 'DESC']],
+        include: [{
+                model: Comment,
+                attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+                include: {
+                    model: User,
+                    attributes: ['username']
+                }
+            },
+            {
+                model: User,
+                attributes: ['username']
+            },
+            {
+                model: Category,
+                attributes: ['category_name']
+            },
+
+        ],
+
+    })
+    .then(dbPostData => {
+        const posts = dbPostData.map(post => post.get({ plain: true }));
+        // console.log(posts);
+        res.render('trends', {
+            posts,
+            loggedIn: req.session.loggedIn
+        });
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+
+});
+
+router.get('/about-us', (req, res) => {
+    res.render('about-us', {loggedIn: req.session.loggedIn});
+})
+
+router.get('/contact', (req, res) => {
+    res.render('contact', {loggedIn: req.session.loggedIn});
+})
 
 module.exports = router;

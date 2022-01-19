@@ -1,0 +1,15 @@
+<article class="post">
+  <div class="title">
+      <h4>Comments</h4>
+  </div>  
+  {{#each this}}
+  <section style="border: solid var(--tertiary); margin: .5rem; border-radius: 1rem;" class="comment">
+    <div style="text-decoration: underline; font-size:large;" class="meta">
+      {{user.username}} on {{format_date created_at}}
+    </div>
+    <div class="text">
+      {{comment_text}}
+    </div>
+  </section>
+  {{/each}}
+</article>

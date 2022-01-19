@@ -1,13 +1,46 @@
+// import all models
+const Post = require('./Post');
 const User = require('./User');
-const Gallery = require('./Gallery');
-const Painting = require('./Painting');
+const Comment = require('./Comment');
+const Category = require('./Category');
 
-Gallery.hasMany(Painting, {
-  foreignKey: 'gallery_id',
+// create associations
+User.hasMany(Post, {
+    foreignKey: 'user_id'
 });
 
-Painting.belongsTo(Gallery, {
-  foreignKey: 'gallery_id',
+Post.belongsTo(User, {
+    foreignKey: 'user_id',
+    onDelete: 'SET NULL'
 });
 
-module.exports = { User, Gallery, Painting };
+Comment.belongsTo(User, {
+    foreignKey: 'user_id',
+    onDelete: 'SET NULL'
+});
+
+Comment.belongsTo(Post, {
+    foreignKey: 'post_id',
+    onDelete: 'SET NULL'
+});
+
+User.hasMany(Comment, {
+    foreignKey: 'user_id',
+    onDelete: 'SET NULL'
+});
+
+Post.hasMany(Comment, {
+    foreignKey: 'post_id'
+});
+
+Post.belongsTo(Category, {
+    foreignKey: 'category_id',
+    onDelete: 'SET NULL'
+});
+
+Category.hasMany(Post, {
+    foreignKey: 'post_id'
+});
+
+
+module.exports = { User, Post, Comment, Category };

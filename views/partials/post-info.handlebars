@@ -1,0 +1,29 @@
+<article class="post">
+  {{log image_name}}
+  <div>
+    <img src="/uploads/{{image_name}}" alt="{{title}}" style="height: 30rem; width: 45rem;">
+  </div>
+  <br>
+  <br>
+  <div class="title">
+    <a style="color:#4a4a4a; font-weight:bolder;" href="/post/{{id}}" class="edit-link"><h3 style="font-weight:bolder;">{{title}}</h3></a>
+    <br/>
+    <p style="display: flex; font-size:large; text-decoration: underline;">
+      Posted by {{user.username}} on {{format_date created_at}}</p>
+  </div>
+  <div class="description">
+    <p style="font-size: large; font: arial; font-weight: 500; margin: 1rem;">
+    {{description}}
+    </p>
+  </div>
+  <div class="categories">
+    <p
+      style="font-size: large; font: arial; font-weight: 500; margin: 1rem;"
+    >{{category.category_name}}</p>
+  </div>
+  <div class="meta">
+    <a href="/post/{{id}}">{{comments.length}}
+      {{format_plural "comment" comments.length}}</a>
+  </div>
+</article>
+<hr>

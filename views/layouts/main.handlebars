@@ -1,38 +1,69 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Museum</title>
-  <link rel="stylesheet" type="text/css" href="/css/jass.css">
-  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Hype</title>
+  <link
+    rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="/css/style.css" />
 </head>
 
 <body>
-  <header>
-    <h1>Welcome to The Hype</h1>
-    <p>Find todays hottest trends</p>
-  </header>
-  <nav>
-    <a href="/">Home</a>
-    {{#if loggedIn}}
-    <button id="logout" class="btn-no-style">Logout</button>
-    {{else}}
-    <a href="/login">Login</a>
-    {{/if}}
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <H1 style="color: #1b1b1b; font-weight:bolder; font-size:large;">THE HYPE</H1>
+      </a>
+
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        {{!-- <a class="navbar-item" href="/">Home</a> --}}
+        {{#if loggedIn}}
+        <a class="navbar-item" href="/trends">All Trends</a>
+        <a class="navbar-item" href="/dashboard">Dashboard</a>
+        {{else}}
+        <a class="navbar-item" href="/login">All Trends</a>
+        <a class="navbar-item" href="/login">Dashboard</a>
+        {{/if}}
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">More</a>
+              <div class="navbar-dropdown">
+                <a class="navbar-item" href="/about-us">About Us</a>
+                <a class="navbar-item" href="/contact">Contact</a>
+              </div>
+          </div>
+      </div>
+    </div>
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          {{#if loggedIn}}
+          <a class="button is-light" href="#" onclick="logout()">Logout</a>
+          {{else}}
+          <a class="button is-light" href="/login">Login</a>
+          <a class="button is-primary" href="/signup">
+            <strong>Sign up</strong>
+          </a>
+          {{/if}}
+      </div>
+    </div>   
   </nav>
   <main>
-    <aside>
-      <h2>PLACE A COUPLE IMAGES HERE!</h2>
-    </aside>
-    <div class="gallery">
-      {{{body}}}
-    </div>
+  {{{body}}}
   </main>
-  {{#if loggedIn}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
 </body>
-
+<script src="/javascript/hamburger-nav.js"></script>
+{{#if loggedIn}}
+  <script src="/javascript/logout.js"></script>
+{{/if}}
 </html>

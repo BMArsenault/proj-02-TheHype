@@ -1,0 +1,40 @@
+<section>
+  <h2>Edit Post</h2>
+
+  <form class="edit-post-form">
+    <div class="field">
+      <label class="label" for="post-title">Title</label>
+      <input class="input" type="text" id="post-title" name="post-title" value="{{post.title}}" />
+    </div>
+    
+    <div class="field">
+      <label class="label" for="post-description">Description</label>
+        <div class="control">
+           <textarea id="post-description" class="textarea" placeholder="Textarea"></textarea>
+         </div>
+    </div>
+    <div>
+      <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
+    </div>
+    <br>
+    <button class="button is-fullwidth is-success" type="submit">Update Post</button>
+    <br>
+    <button class="delete-post-btn button is-fullwidth is-danger" type="button" >Delete post</button>
+  </form>
+</section> 
+
+{{!-- <form class="comment-form">
+  <div>
+    <textarea name="comment-body"></textarea>
+  </div>
+
+  <div>
+    <button class="button is-fullwidth is-dark" type="submit">add comment</button>
+  </div>
+</form>
+
+{{> comments post.comments}} --}}
+
+<script src="/javascript/edit-post.js"></script>
+<script src="/javascript/delete-post.js"></script>
+<script src="/javascript/comment.js"></script>

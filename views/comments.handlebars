@@ -1,0 +1,66 @@
+<article class="post">
+  <div class="title">
+      <h4>Comments</h4>
+  </div>  
+  {{#each this}}
+  <section style="border: solid var(--tertiary); margin: .5rem; border-radius: 1rem;" class="comment">
+    <div style="text-decoration: underline; font-size:large;" class="meta">
+      {{user.username}} on {{format_date created_at}}
+    </div>
+    <div class="text">
+      {{comment_text}}
+    </div>
+  </section>
+  {{/each}}
+</article>
+
+<br>
+<br>
+<br>
+<section class="vh-75">
+  <div class="container py-5 h-75">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card bg-dark text-white" style="border-radius: 1rem;">
+          <div class="card-body p-5 text-center">
+            <div class="mb-md-5 mt-md-4 pb-5">
+              <h2 class="title">Comments</h2>
+              <p class="text-white-50 mb-5">Please enter your username, email and
+                password!</p>
+              <div class="field">
+                <label class="label">Username</label>
+                <div class="control">
+                  <input id="username-signup" class="input" type="text" placeholder="Username" />
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Email</label>
+                <div class="control">
+                  <input id="email-signup" class="input" type="text" placeholder="Email" />
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Password</label>
+                <div class="control">
+                  <input id="password-signup" class="input" type="password" placeholder="Password" />
+                </div>
+              </div>
+              <div class="field is-grouped">
+                <div class="control">
+                  <button class="button is-link" onclick="signupFormHandler()">Submit</button>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p class="mb-0">Don't have an account?
+                <a href="/login" class="text-white-50 fw-bold">Log In</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<footer id="footer" class="has-text-centered">
+      &copy The Hype 🔥 2022
+</footer>

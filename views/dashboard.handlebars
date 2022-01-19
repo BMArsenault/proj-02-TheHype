@@ -1,0 +1,97 @@
+<br>
+<br>
+<br>
+{{#if loggedIn}}
+<section class="vh-75">
+  <div class="container py-5 h-75">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card bg-dark text-white" style="border-radius: 1rem;">
+          <div class="card-body p-5 text-center">
+            <div class=" mb-md-5 mt-md-4 pb-5">
+              <h2 class="title">Create New Post</h2>
+              <form action="/api/posts" method="POST" enctype="multipart/form-data">
+              <div class="field">
+                <label class="label" for="post-title">Title</label>
+                <div class="control">
+                  <input class="input" type="text" id="post-title" name="title" />
+                </div>
+              </div>
+              <div class="field">
+                <label class="label" for="post-description">Description</label>
+                <div class="control">
+                  <textarea name="description" id="post-description" class="textarea" placeholder="Textarea"></textarea>
+                </div>
+              </div>
+              <label class="label" for="post-category">Category</label>
+              <div>               
+                <select name="categories" class="categories">
+                  <option disabled>Select Category</option>
+                  <option value="1">Sports</option>
+                  <option value="2">World</option>
+                  <option value="3">Streetwear</option>
+                  <option value="4">Food and Drink</option>
+                  <option value="5">Cars</option>
+                  <option value="6">Crypto</option>
+                </select>
+              </div>
+              <br>
+              <br>
+              <label class="label" for="post-image">Image</label>
+              
+                <div>
+                    <label>Upload Image</label>
+                    <input type="file" name="image_name" required/>
+                </div>
+                <br>
+              <div class="field is-grouped">
+                <div class="control">
+                  <button class="button is-link" type="submit">Create</button>
+                </div>
+              </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<br>
+{{#if posts.length}}
+<section class="vh-75">
+  <div class="container py-5 h-75">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card bg-dark text-white" style="border-radius: 1rem;">
+            <div class="card-body p-5 text-center">
+              <div class=" mb-md-5 mt-md-4 pb-5">
+                <h2 class="title">Your Posts</h2>
+                <ul>
+                  {{#each posts as |post|}}
+                  <li>
+                    {{> post-info post}}
+                    <div class="button" style="margin-bottom: 1rem; font-weight: bold;">
+                      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+                    </div>      
+                  </li>
+                  {{/each}}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</section>
+{{/if}}
+<br>
+<br>
+{{/if}}
+
+<footer id="footer" class="has-text-centered">
+      &copy The Hype 🔥 2022
+</footer>
+<script src="/javascript/image-file-name.js"></script>
+<script src="/javascript/add-post.js"></script>

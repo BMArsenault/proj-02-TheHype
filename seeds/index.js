@@ -1,15 +1,23 @@
+const seedUsers = require('./user-seeds');
+const seedPosts = require('./post-seeds');
+const seedComments = require('./comment-seeds');
+const seedCategory = require('./category-seeds');
+
 const sequelize = require('../config/connection');
-const seedGallery = require('./galleryData');
-const seedPaintings = require('./paintingData');
 
-const seedAll = async () => {
-  await sequelize.sync({ force: true });
+const seedAll = async() => {
+    await sequelize.sync({ force: true });
+    console.log('--------------');
+    await seedUsers();
+    console.log('--------------');
+    await seedCategory();
+    console.log('--------------');
+    await seedPosts();
+    console.log('--------------');
+    await seedComments();
+    console.log('--------------');
 
-  await seedGallery();
-
-  await seedPaintings();
-
-  process.exit(0);
+    process.exit(0);
 };
 
 seedAll();
