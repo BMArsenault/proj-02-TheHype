@@ -36,7 +36,7 @@ input[type=file]::file-selector-button {
     background: white;
 }
 
-/* contact.handlebars pages */
+/* contact.handlebars page */
 .contact {
     display: flex;
     justify-content: center;
@@ -45,7 +45,16 @@ input[type=file]::file-selector-button {
     margin-bottom: 30px;
 }
 
+/* about.handlebars page */
+.about-us {
+background-image: url("../images/cooll-cool-img.jpeg");
+}
 
-/* .icon {
-    font-size: 25px;
-} */
+.about {
+    display: flex;
+    justify-content: center;
+    font-size: xx-large;
+    font-weight: bolder;
+    margin-bottom: 30px;
+}
+
