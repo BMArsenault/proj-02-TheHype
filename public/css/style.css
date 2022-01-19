@@ -35,3 +35,46 @@ input[type=file]::file-selector-button {
     height: 40px;
     background: white;
 }
+/* contact.handlebars page */
+/* .info {
+    background-image: url("../uploads/fire-fire.jpeg");
+    background-position: center;
+} */
+
+.contact {
+    display: flex;
+    justify-content: center;
+    font-size: xx-large;
+    font-weight: bolder;
+    margin-bottom: 30px;
+}
+
+.phone:hover {
+    color: rgba(41, 27, 236, 0.884);
+}
+
+.email:hover{
+    color: rgb(41, 27, 236, 0.884);
+}
+
+/* about.handlebars page */
+/* .about-us {
+background-image: url("../uploads/fire-fire.jpeg");
+background-position: center;
+} */
+
+.about {
+    display: flex;
+    justify-content: center;
+    font-size: xx-large;
+    font-weight: bolder;
+    margin-bottom: 30px;
+}
+
+.founders {
+    display: flex;
+    justify-content: center;
+    font-size: xx-large;
+    font-weight: bolder;
+    margin-bottom: 30px;
+}

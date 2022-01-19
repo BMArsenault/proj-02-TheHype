@@ -43,13 +43,6 @@ Post.init({
         type: DataTypes.STRING,
         allowNull: false
     },
-    // category_id: {
-    //     type: DataTypes.INTEGER,
-    //     references: {
-    //         model: 'category',
-    //         key: 'id'
-    //     }
-    // },
     image_name: {
         type: DataTypes.STRING,
         allowNull: true

@@ -29,17 +29,17 @@
       <div class="navbar-start">
         {{!-- <a class="navbar-item" href="/">Home</a> --}}
         {{#if loggedIn}}
-        {{!-- <a class="navbar-item" href="/posts">All Posts</a> --}}
+        <a class="navbar-item" href="/trends">All Trends</a>
         <a class="navbar-item" href="/dashboard">Dashboard</a>
         {{else}}
-        {{!-- <a class="navbar-item" href="/login">All Posts</a> --}}
+        <a class="navbar-item" href="/login">All Trends</a>
         <a class="navbar-item" href="/login">Dashboard</a>
         {{/if}}
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link">More</a>
               <div class="navbar-dropdown">
-                <a class="navbar-item">About Us</a>
-                <a class="navbar-item">Contact</a>
+                <a class="navbar-item" href="/about-us">About Us</a>
+                <a class="navbar-item" href="/contact">Contact</a>
               </div>
           </div>
       </div>
