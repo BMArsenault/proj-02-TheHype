@@ -1,0 +1,35 @@
+<br>
+{{#if posts.length}}
+<section class="vh-75">
+  <div class="container py-5 h-75">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card bg-dark text-white" style="border-radius: 1rem;">
+            <div class="card-body p-5 text-center">
+              <div class=" mb-md-5 mt-md-4 pb-5">
+                <h2 class="title">Food & Drink Posts 🔥</h2>
+                <hr>
+                <ul>
+                  {{#each posts as |post|}}
+                  <li>
+                    {{> post-info post}}
+                    <div class="button" style="margin-bottom: 1rem; font-weight: bold;">
+                      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+                    </div>      
+                  </li>
+                  {{/each}}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</section>
+{{/if}}
+<br>
+<br>
+
+<footer id="footer" class="has-text-centered">
+      &copy The Hype 🔥 2022
+</footer>
