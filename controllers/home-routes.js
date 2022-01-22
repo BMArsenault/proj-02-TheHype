@@ -60,6 +60,9 @@ router.get('/post/:id', (req, res) => {
                 'image_name',
                 'created_at',
             ],
+            order: [
+                ['created_at', 'DESC']
+            ],
             include: [{
                     model: Comment,
                     attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
@@ -111,55 +114,57 @@ router.get('/signup', (req, res) => {
 
 router.get('/trends', (req, res) => {
     Post.findAll({
-        attributes: [
-            'id',
-            'title',
-            'description',
-            'image_name',
-            'created_at'
-        ],
-        order: [['created_at', 'DESC']],
-        include: [{
-                model: Comment,
-                attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-                include: {
+            attributes: [
+                'id',
+                'title',
+                'description',
+                'image_name',
+                'created_at'
+            ],
+            order: [
+                ['created_at', 'DESC']
+            ],
+            include: [{
+                    model: Comment,
+                    attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+                    include: {
+                        model: User,
+                        attributes: ['username']
+                    }
+                },
+                {
                     model: User,
                     attributes: ['username']
-                }
-            },
-            {
-                model: User,
-                attributes: ['username']
-            },
-            {
-                model: Category,
-                attributes: ['category_name']
-            },
+                },
+                {
+                    model: Category,
+                    attributes: ['category_name']
+                },
 
-        ],
+            ],
 
-    })
-    .then(dbPostData => {
-        const posts = dbPostData.map(post => post.get({ plain: true }));
-        // console.log(posts);
-        res.render('trends', {
-            posts,
-            loggedIn: req.session.loggedIn
+        })
+        .then(dbPostData => {
+            const posts = dbPostData.map(post => post.get({ plain: true }));
+            // console.log(posts);
+            res.render('trends', {
+                posts,
+                loggedIn: req.session.loggedIn
+            });
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
         });
-    })
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
 
 });
 
 router.get('/about-us', (req, res) => {
-    res.render('about-us', {loggedIn: req.session.loggedIn});
+    res.render('about-us', { loggedIn: req.session.loggedIn });
 })
 
 router.get('/contact', (req, res) => {
-    res.render('contact', {loggedIn: req.session.loggedIn});
+    res.render('contact', { loggedIn: req.session.loggedIn });
 })
 
 module.exports = router;
