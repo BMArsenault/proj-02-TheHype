@@ -4,8 +4,8 @@ const { Post, User, Comment, Category } = require('../models');
 const withAuth = require('../utils/auth');
 
 // get all posts for homepage
-router.get('/', withAuth, (req, res) => {
-    console.log('======================');
+router.get('/', (req, res) => {
+    console.log('====================== HOMEPAGE =============');
     Post.findAll({
             attributes: [
                 'id',
