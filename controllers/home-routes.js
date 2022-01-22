@@ -35,7 +35,6 @@ router.get('/', withAuth, (req, res) => {
         })
         .then(dbPostData => {
             const posts = dbPostData.map(post => post.get({ plain: true }));
-            // console.log(posts);
             res.render('homepage', {
                 posts,
                 loggedIn: req.session.loggedIn
@@ -144,7 +143,6 @@ router.get('/trends', withAuth, (req, res) => {
         })
         .then(dbPostData => {
             const posts = dbPostData.map(post => post.get({ plain: true }));
-            // console.log(posts);
             res.render('trends', {
                 posts,
                 loggedIn: req.session.loggedIn
@@ -169,7 +167,9 @@ router.get('/sports', withAuth, (req, res) => {
                 'image_name',
                 'created_at',
             ],
-            order: [['created_at', 'DESC']],
+            order: [
+                ['created_at', 'DESC']
+            ],
             include: [{
                     model: Comment,
                     attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
@@ -190,7 +190,6 @@ router.get('/sports', withAuth, (req, res) => {
         })
         .then(dbPostData => {
             const posts = dbPostData.map(post => post.get({ plain: true }));
-            // console.log(posts);
             res.render('sports', {
                 posts,
                 loggedIn: req.session.loggedIn
@@ -214,7 +213,9 @@ router.get('/world', withAuth, (req, res) => {
                 'image_name',
                 'created_at',
             ],
-            order: [['created_at', 'DESC']],
+            order: [
+                ['created_at', 'DESC']
+            ],
             include: [{
                     model: Comment,
                     attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
@@ -235,7 +236,6 @@ router.get('/world', withAuth, (req, res) => {
         })
         .then(dbPostData => {
             const posts = dbPostData.map(post => post.get({ plain: true }));
-            // console.log(posts);
             res.render('world', {
                 posts,
                 loggedIn: req.session.loggedIn
@@ -259,7 +259,9 @@ router.get('/streetwear', withAuth, (req, res) => {
                 'image_name',
                 'created_at',
             ],
-            order: [['created_at', 'DESC']],
+            order: [
+                ['created_at', 'DESC']
+            ],
             include: [{
                     model: Comment,
                     attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
@@ -280,7 +282,6 @@ router.get('/streetwear', withAuth, (req, res) => {
         })
         .then(dbPostData => {
             const posts = dbPostData.map(post => post.get({ plain: true }));
-            // console.log(posts);
             res.render('streetwear', {
                 posts,
                 loggedIn: req.session.loggedIn
@@ -303,7 +304,9 @@ router.get('/foodanddrink', withAuth, (req, res) => {
                 'image_name',
                 'created_at',
             ],
-            order: [['created_at', 'DESC']],
+            order: [
+                ['created_at', 'DESC']
+            ],
             include: [{
                     model: Comment,
                     attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
@@ -324,7 +327,6 @@ router.get('/foodanddrink', withAuth, (req, res) => {
         })
         .then(dbPostData => {
             const posts = dbPostData.map(post => post.get({ plain: true }));
-            // console.log(posts);
             res.render('foodanddrink', {
                 posts,
                 loggedIn: req.session.loggedIn
@@ -347,7 +349,9 @@ router.get('/cars', withAuth, (req, res) => {
                 'image_name',
                 'created_at',
             ],
-            order: [['created_at', 'DESC']],
+            order: [
+                ['created_at', 'DESC']
+            ],
             include: [{
                     model: Comment,
                     attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
@@ -368,7 +372,6 @@ router.get('/cars', withAuth, (req, res) => {
         })
         .then(dbPostData => {
             const posts = dbPostData.map(post => post.get({ plain: true }));
-            // console.log(posts);
             res.render('cars', {
                 posts,
                 loggedIn: req.session.loggedIn
@@ -391,7 +394,9 @@ router.get('/crypto', withAuth, (req, res) => {
                 'image_name',
                 'created_at',
             ],
-            order: [['created_at', 'DESC']],
+            order: [
+                ['created_at', 'DESC']
+            ],
             include: [{
                     model: Comment,
                     attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
@@ -412,7 +417,6 @@ router.get('/crypto', withAuth, (req, res) => {
         })
         .then(dbPostData => {
             const posts = dbPostData.map(post => post.get({ plain: true }));
-            // console.log(posts);
             res.render('crypto', {
                 posts,
                 loggedIn: req.session.loggedIn

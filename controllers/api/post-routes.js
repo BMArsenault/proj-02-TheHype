@@ -116,7 +116,6 @@ router.put('/:id', withAuth, (req, res) => {
     Post.update({
             title: req.body.title,
             description: req.body.description,
-            image_name: req.file.path,
             user_id: req.session.user_id
         }, {
             where: {
