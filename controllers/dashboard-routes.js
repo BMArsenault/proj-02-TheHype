@@ -5,7 +5,6 @@ const withAuth = require('../utils/auth');
 
 // get all posts for dashboard
 router.get('/', withAuth, (req, res) => {
-    console.log(req.session);
     console.log('======================');
     Post.findAll({
             where: {
@@ -18,6 +17,9 @@ router.get('/', withAuth, (req, res) => {
                 'category_id',
                 'image_name',
                 'created_at'
+            ],
+            order: [
+                ['created_at', 'DESC']
             ],
             include: [{
                     model: Comment,
@@ -39,7 +41,6 @@ router.get('/', withAuth, (req, res) => {
         })
         .then(dbPostData => {
             const posts = dbPostData.map(post => post.get({ plain: true }));
-            console.log(posts);
             res.render('dashboard', { posts, dashBoard: true, loggedIn: true });
         })
         .catch(err => {

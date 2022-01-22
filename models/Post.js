@@ -47,6 +47,10 @@ Post.init({
         type: DataTypes.STRING,
         allowNull: true
     },
+    category_id: {
+        type: DataTypes.INTEGER,
+        allowNull: true
+    },
     user_id: {
         type: DataTypes.INTEGER,
         references: {

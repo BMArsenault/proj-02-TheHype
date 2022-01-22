@@ -12,10 +12,7 @@
                 <ul>
                   {{#each posts as |post|}}
                   <li>
-                    {{> post-info post}}
-                    <div class="button" style="margin-bottom: 1rem; font-weight: bold;">
-                      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
-                    </div>      
+                    {{> post-info post}}                        
                   </li>
                   {{/each}}
                 </ul>

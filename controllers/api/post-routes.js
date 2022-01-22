@@ -88,14 +88,12 @@ router.get('/:id', (req, res) => {
 
 router.post('/', withAuth, upload.single('image_name'), (req, res) => {
     // expects {title: 'Taskmaster goes public!', post_url: 'https://taskmaster.com/press', user_id: 1}
-    console.log("READING PATH: ", req.file.path.replace('public\\uploads\\', ''));
-    console.log("title:", req.body.title);
-    console.log(req.body);
+    let fileName = req.file.path.substring(15);
     Post.create({
             title: req.body.title,
             description: req.body.description,
             category_id: req.body.categories,
-            image_name: req.file.path.replace('public\\uploads\\', ''),
+            image_name: fileName,
             user_id: req.session.user_id
         })
         .then(res.redirect('/dashboard/'))
@@ -118,7 +116,6 @@ router.put('/:id', withAuth, (req, res) => {
     Post.update({
             title: req.body.title,
             description: req.body.description,
-            image_name: req.file.path,
             user_id: req.session.user_id
         }, {
             where: {
