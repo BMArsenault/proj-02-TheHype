@@ -20,16 +20,17 @@ The Hype is the newest website for today's trends. Login and you can post, edit 
 ```
 As a user I want to be able to visit a website and find today’s trending topics and share my own posts with like-minded people.
 When I click Sign Up, I want to be able to create a user with my email, username  and password.
-Then I am redirected to the main site where I can start exploring, commenting, editing and posting posts.
+So that I am redirected to the main site where I can start exploring, commenting, editing and posting posts.
 When I click on Login, I want to be able to Log in with my email and password.
-Then I am redirected to the main site where I can start exploring, commenting, editing and posting posts.
-When I click on an article, I want to be taken to that article where I can read up on the topic and look at comments other users from the community have shared.  
-When I click on All Trends I want to be able to see the latest posts.
-When I click on comment I want to be able to leave a comment on the article.
-When I go to my dashboard.
-Then I am able to see all the posts I have added in the past and I am able to create a new post that includes a title, a description, the category that the post belongs to and finally I can upload a picture for others to see.
+So that I am redirected to the main site where I can start exploring, commenting, editing and posting posts.
+When I click on an article, I want to be taken to that article so that I can read up on the topic and look at comments other users from the community have shared.  
+When I click on All Trends I want to be able to see the latest posts so that I can scroll through all trends posted.
+When I click on comment I want to be able to leave a comment on the article so that others can see my response.
+When I go to my dashboard
+Then I am able to see all the posts I have added in the past so that I am able to create a new post that includes a title, a description, the category that the post belongs to and finally I can upload a picture for others to see.
 When I click on edit post.
-Then I can update or delete that post.
+Then I can update or delete that post
+So that I can fix mistakes I have made in my posts.
 ```
 
 ### Acceptance Criteria
